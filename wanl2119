@@ -1,0 +1,41 @@
+//Test.h///////////////
+
+
+//类声明
+
+
+class MyClass
+{
+private:
+int i, j;
+
+public:
+MyClass();
+
+template <class T> friend int Add(T t1,T t2);
+};
+
+//////////////Test.cpp////////////////////////
+
+#include <tchar.h>
+#include "Test.h"
+
+
+
+//模板函数声明
+
+template <class T> int Add(T t1,T t2)
+
+{
+return t1.i+t2.j;
+}
+
+MyClass::MyClass() : i(10), j(20) {}
+
+//主函数
+void _tmain()
+{
+MyClass t1, t2;
+int t = Add(t1,t2);
+cout << t;
+}
